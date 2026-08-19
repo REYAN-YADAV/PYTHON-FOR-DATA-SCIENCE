@@ -1,5 +1,2 @@
-Introduction of data science.
-history of python
-Feature of python
-variables, print function
-input function
+Type of data type
+Fundamental data type
