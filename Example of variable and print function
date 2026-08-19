@@ -1,0 +1,82 @@
+#ex pf pront
+no1 = 12
+no2 = 2
+product = no1*no2
+print(product)
+
+a = 10 
+print(a)
+print(10)
+
+a =10
+b = 20
+c = a+b
+print(a,b,c)
+
+print("Hello world")
+print('Hello world')
+print("""Helo world""")
+
+print('Hello','World')
+print('Hello '+'python '+'world')
+
+print('Hello'+" "+"world")
+print('Hello'+""+'world')
+
+print('Helo'+4)
+
+
+'''---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[10], line 1
+----> 1 print('Helo'+4)
+
+TypeError: can only concatenate str (not "int") to str
+'''
+print("Hello"+"4")
+
+print("Hello"+str(4))
+
+print('hello'+4*3)
+
+'''--------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[13], line 1
+----> 1 print('hello'+4*3)
+
+TypeError: can only concatenate str (not "int") to str
+'''
+print("hello"+str(4*3))
+
+a = 10
+print("Value of a =",a)
+print(a,"is the value of a")
+a = 10
+b = 20
+c = a+b
+print("sum = ",c)
+print(c, "is the sum")
+print("sum of ",a,"and",b,"=",c)
+print("sum of "+str(a)+" and "+str(b)+" = "+str(c))
+print("sum of ",a,",",b,"=",c)
+a = 10
+print("value of a = {}".format(a))
+print("{} is value of a".format(a))
+
+sno = 10
+sname = "Reyan"
+marks = 34.56
+print("my number is %d and name is %s and marks %0.2f" %(sno,sname,marks))
+
+lst = [10,"branch",34.5,"time"]
+print("content of lst = {}".format(lst))
+print("content of lst = %s" %str(lst))
+
+r = range(10,20,3)
+for v in r:
+    print(v,end=" ")
+
+    
+
+    
+          
