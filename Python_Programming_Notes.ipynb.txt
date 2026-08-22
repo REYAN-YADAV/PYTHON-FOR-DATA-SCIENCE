@@ -1,0 +1,851 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Python Programming Notes\n",
+    "\n",
+    "*Converted from handwritten class notes*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Number of Approaches to Develop the Program in Python\n",
+    "\n",
+    "In Python programming, we have **2 types of approaches** to develop the programs. They are:\n",
+    "\n",
+    "1. Interactive Approach\n",
+    "2. Batch mode Approach\n",
+    "\n",
+    "**Program** \u2192 A set of optimized instructions is called a program.\n",
+    "\n",
+    "**Optimized instructions** are nothing but instructions which take less memory space (space complexity) and less execution time (time complexity).\n",
+    "\n",
+    "The purpose of developing or writing the program is that **\"To develop Real Time problems or tasks\"**.\n",
+    "\n",
+    "After writing a set of optimized instructions, we save them on a computer with some file name with extension `.py` (source code)."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 1. Interactive Approach\n",
+    "\n",
+    "In Interactive Approach, a Python programmer can issue one statement at a time and gets one output at a time.\n",
+    "\n",
+    "- Interactive Approach is most useful to test one instruction at a time.\n",
+    "- It is **not recommended** to write a group of instructions because we are unable to save these instructions and reuse them again over in another program/project.\n",
+    "\n",
+    "**Example of Interactive Approach software:**\n",
+    "1. Python command prompt\n",
+    "2. Python IDLE Shell\n",
+    "\n",
+    "Once we install Python software, we get the above two execution environments."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 2. Batch Mode Approach\n",
+    "\n",
+    "In Batch Mode Approach, a Python programmer will write a group of instructions and save them into some file with the extension `.py` (source code) either for reuse or incorporating the file into another program/project.\n",
+    "\n",
+    "Batch mode Approach is most useful to develop Real time applications in the form of programs.\n",
+    "\n",
+    "**Example of Batch mode Approach software:**\n",
+    "1. Python IDLE (write mode)\n",
+    "2. Third party IDE (Integrated Development Environment) such as:\n",
+    "   - a) PyCharm\n",
+    "   - b) Anaconda / Jupiter Notebook\n",
+    "   - c) Anaconda / Spyder\n",
+    "   - d) Atom\n",
+    "   - e) VS Code\n",
+    "   - f) Google Colab"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Displaying Output of a Python Program\n",
+    "\n",
+    "**Note:** To run the python program from Windows command prompt, we use a tool called **\"python\"**.\n",
+    "\n",
+    "**Syntax:**\n",
+    "```\n",
+    "python filename.py\n",
+    "```\n",
+    "\n",
+    "To display the result of a Python program on the console, we use a pre-defined function called **`print()`**.\n",
+    "\n",
+    "`print()` is used for displaying the result of a Python program on the console.\n",
+    "\n",
+    "`print()` can be used in 6 ways. They are explained below."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Syntax 1: `print(value)`\n",
+    "\n",
+    "This syntax displays either a single value or multiple values.\n",
+    "\n",
+    "```\n",
+    "print(value1, value2, ..., valueN)\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "10 20 30\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 10\n",
+    "b = 20\n",
+    "c = a + b\n",
+    "print(a, b, c)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Syntax 2: `print(message)`\n",
+    "\n",
+    "```\n",
+    "print(message)\n",
+    "```\n",
+    "or\n",
+    "```\n",
+    "print(message1, message2, ..., messageN)\n",
+    "```\n",
+    "or\n",
+    "```\n",
+    "print(message1 + message2 + message3 + ... + messageN)\n",
+    "```\n",
+    "\n",
+    "This syntax displays message(s) which are of type `str`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "Hello world\n",
+      "Hello world\n",
+      "Hello world\n",
+      "Hello world\n",
+      "Hello World\n",
+      "Hello World\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Hello world\")\n",
+    "print('Hello world')\n",
+    "print(\"\"\"Hello world\"\"\")\n",
+    "print('''Hello world''')\n",
+    "print('Hello', 'World')\n",
+    "print('Hello' + ' ' + 'World')\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "When we try to concatenate a string with a non-string (int) value using `+`, Python raises a `TypeError`, since `+` can only concatenate `str` (not `int`) to `str`. We must convert the non-string value into `str` using `str()` first."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "Hello4\n",
+      "Hello12\n"
+     ]
+    }
+   ],
+   "source": [
+    "H = 4\n",
+    "# print(\"Hello\" + H)   -> This raises: TypeError: can only concatenate str (not \"int\") to str\n",
+    "print(\"Hello\" + str(H))\n",
+    "print(\"Hello\" + str(4 * 3))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Syntax 3: `print(value cum message)`\n",
+    "\n",
+    "```\n",
+    "print(value cum message)\n",
+    "```\n",
+    "or\n",
+    "```\n",
+    "print(message cum value)\n",
+    "```\n",
+    "\n",
+    "This syntax displays values cum message or message cum values."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "value of = 10\n",
+      "10 is the value of a\n",
+      "sum = 30\n",
+      "30 is the sum\n",
+      "sum of 10 and 20 = 30\n",
+      "sum of 10 and 20 = 30\n",
+      "sum of (10, 20) = 30\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 10\n",
+    "print(\"value of =\", a)\n",
+    "print(a, \"is the value of a\")\n",
+    "\n",
+    "a = 10\n",
+    "b = 20\n",
+    "c = a + b\n",
+    "print(\"sum =\", c)\n",
+    "print(c, \"is the sum\")\n",
+    "print(\"sum of\", a, \"and\", b, \"=\", c)\n",
+    "print(\"sum of \" + str(a) + \" and \" + str(b) + \" = \" + str(c))\n",
+    "print(\"sum of\", (a, b), \"=\", c)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Syntax 4: `print(value/message with format())`\n",
+    "\n",
+    "```\n",
+    "print(\"... {} ...\".format(value))\n",
+    "```\n",
+    "or\n",
+    "```\n",
+    "print(\"{} ...\".format(value))\n",
+    "```\n",
+    "\n",
+    "This syntax displays value cum message or message cum value using the `format()` method with `{}` placeholders."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "value of a = 10\n",
+      "10 is value of a.\n",
+      "sum = 30\n",
+      "30 is the sum\n",
+      "sum of 10 and 20 = 30\n",
+      "sum(10, 20) = 30\n",
+      "10 + 20 = 30\n",
+      "my number is 10 and Name is Reyan\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 10\n",
+    "print(\"value of a = {}\".format(a))\n",
+    "print(\"{} is value of a.\".format(a))\n",
+    "\n",
+    "a = 10\n",
+    "b = 20\n",
+    "c = a + b\n",
+    "print(\"sum = {}\".format(c))\n",
+    "print(\"{} is the sum\".format(c))\n",
+    "print(\"sum of {} and {} = {}\".format(a, b, c))\n",
+    "print(\"sum({}, {}) = {}\".format(a, b, c))\n",
+    "print(\"{} + {} = {}\".format(a, b, c))\n",
+    "\n",
+    "sno = 10\n",
+    "sname = \"Reyan\"\n",
+    "print(\"my number is {} and Name is {}\".format(sno, sname))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Syntax 5: `print(value/message with format specifiers)`\n",
+    "\n",
+    "```\n",
+    "print(\"... %<specifier> ...\" % (value))\n",
+    "```\n",
+    "or\n",
+    "```\n",
+    "print(\"... %<specifier> ...\" % (value1, value2, ...))\n",
+    "```\n",
+    "\n",
+    "This syntax displays value cum message or message cum values **with format specifiers**.\n",
+    "\n",
+    "In Python, we have 3 types of format specifiers. They are:\n",
+    "\n",
+    "a) `%d` \u2192 for Integer\n",
+    "b) `%f` \u2192 for Float\n",
+    "c) `%s` \u2192 for str\n",
+    "\n",
+    "**Note:** When we come across mixed/advanced (heterogeneous) data, we must convert such type of data into `str` by using `str()` and use `%s` as the format specifier."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "my number is 10 and name is AB and marks is 34.56\n",
+      "content of lst = [10, 'brochure', 34.5, True]\n",
+      "content of lst = [10, 'brochure', 34.5, True]\n",
+      "content of d1 = {10: 'Apple', 20: 'mango', 30: 'kiwi'}\n",
+      "content of d1 = {10: 'Apple', 20: 'mango', 30: 'kiwi'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "sno = 10\n",
+    "sname = \"AB\"\n",
+    "marks = 34.56\n",
+    "print(\"my number is %d and name is %s and marks is %0.2f\" % (sno, sname, marks))\n",
+    "\n",
+    "lst = [10, \"brochure\", 34.5, True]\n",
+    "print(\"content of lst = {}\".format(lst))\n",
+    "print(\"content of lst = %s\" % str(lst))\n",
+    "# print(\"content of lst = %d\" % lst)   -> TypeError: %d format: a real number is required, not list\n",
+    "\n",
+    "d1 = {10: \"Apple\", 20: \"mango\", 30: \"kiwi\"}\n",
+    "print(\"content of d1 = {}\".format(d1))\n",
+    "print(\"content of d1 = %s\" % str(d1))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Syntax 6: `print(value, end=\"delimiter\")`\n",
+    "\n",
+    "```\n",
+    "print(value, end=\"delimiter\")\n",
+    "```\n",
+    "\n",
+    "This syntax displays value(s) in the same line \u2014 Horizontally.\n",
+    "\n",
+    "**Ex:**\n",
+    "```\n",
+    "for x in range(1, 11, 1):\n",
+    "    print(x, end=' ')\n",
+    "```\n",
+    "This function (`range(1, 11, 1)`) is used from beginning to end for placing the values in row-wise (columns), displaying this message with a horizontal-arranged prompting message."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "1 2 3 4 5 6 7 8 9 10 \n"
+     ]
+    }
+   ],
+   "source": [
+    "for x in range(1, 11, 1):\n",
+    "    print(x, end=' ')\n",
+    "print()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Reading the Data Dynamically from Keyboard\n",
+    "\n",
+    "To read the data Dynamically from keyboard, we use two pre-defined functions. They are:\n",
+    "\n",
+    "a) `input()`\n",
+    "b) `input(message)`"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 1. `input()`\n",
+    "\n",
+    "**Syntax:** `varname = input()`\n",
+    "\n",
+    "This function is used for reading any type of data from keyboard and placed in `varname` in the form of `<class 'str'>` (str content).\n",
+    "\n",
+    "Programmatically, we can convert `str` type data into other type of values by using **Type Casting functions**."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 2. `input(message)`\n",
+    "\n",
+    "**Syntax:** `varname = input(message)`\n",
+    "\n",
+    "This function is used for reading any type of data from keyboard and placed in `varname` in the form of `<class 'str'>`. Additionally, it gives a user-prompting message.\n",
+    "\n",
+    "Here `message` represents the user-prompting message.\n",
+    "\n",
+    "Programmatically, we can convert `str` type data into other type of values by using Type Casting functions."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Programming Questions\n",
+    "\n",
+    "The following programs are based on the questions listed at the end of the notes."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Q1. WAP to find area and perimeter of a square"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "side = float(input(\"Enter side of the square: \") or \"5\")\n",
+    "area = side ** 2\n",
+    "perimeter = 4 * side\n",
+    "print(\"Area of square = {}\".format(area))\n",
+    "print(\"Perimeter of square = {}\".format(perimeter))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "Area of square = 25\n",
+      "Perimeter of square = 20\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Demonstration run with a sample value (side = 5)\n",
+    "side = 5\n",
+    "area = side ** 2\n",
+    "perimeter = 4 * side\n",
+    "print(\"Area of square = {}\".format(area))\n",
+    "print(\"Perimeter of square = {}\".format(perimeter))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Q2. WAP to find area of a circle"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "radius = float(input(\"Enter radius of the circle: \") or \"7\")\n",
+    "pi = 3.14159\n",
+    "area = pi * radius ** 2\n",
+    "print(\"Area of circle = {}\".format(area))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "Area of circle = 153.93791\n"
+     ]
+    }
+   ],
+   "source": [
+    "radius = 7\n",
+    "pi = 3.14159\n",
+    "area = pi * radius ** 2\n",
+    "print(\"Area of circle = {}\".format(area))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Q3. WAP which demonstrates the functionality of arithmetic operations"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "a + b = 13\n",
+      "a - b = 7\n",
+      "a * b = 30\n",
+      "a / b = 3.3333333333333335\n",
+      "a // b = 3\n",
+      "a % b = 1\n",
+      "a ** b = 1000\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 10\n",
+    "b = 3\n",
+    "print(\"a + b =\", a + b)\n",
+    "print(\"a - b =\", a - b)\n",
+    "print(\"a * b =\", a * b)\n",
+    "print(\"a / b =\", a / b)\n",
+    "print(\"a // b =\", a // b)\n",
+    "print(\"a % b =\", a % b)\n",
+    "print(\"a ** b =\", a ** b)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Q4. WAP to calculate the square root of any number without using `sqrt()` function of the math module\n",
+    "\n",
+    "**Note:** In Python, `n ** 0.5` is the same as `n ** (1/2)`, which gives the square root of `n`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "n = int(input(\"Enter no. for getting its square root: \") or \"25\")\n",
+    "res = n ** 0.5\n",
+    "print(\"sqrt({}) = {}\".format(n, res))\n",
+    "print(\"sqrt(%d) = %0.2f\" % (n, res))\n",
+    "print(\"sqrt({}) = {}\".format(n, round(res, 2)))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "sqrt(25) = 5.0\n",
+      "sqrt(25) = 5.00\n",
+      "sqrt(25) = 5.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "n = 25\n",
+    "res = n ** 0.5\n",
+    "print(\"sqrt({}) = {}\".format(n, res))\n",
+    "print(\"sqrt(%d) = %0.2f\" % (n, res))\n",
+    "print(\"sqrt({}) = {}\".format(n, round(res, 2)))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Q5. WAP for `(a+b)**2`\n",
+    "\n",
+    "```\n",
+    "(a+b)**2 = (a+b) * (a+b)\n",
+    "         = a*a + 2*a*b + b*b\n",
+    "         = a**2 + 2*a*b + b**2\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "(a+b)**2 = 900\n",
+      "(a+b)*(a+b) = 900\n",
+      "a**2 + 2ab + b**2 = 900\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 10\n",
+    "b = 20\n",
+    "result1 = (a + b) ** 2\n",
+    "result2 = (a + b) * (a + b)\n",
+    "result3 = a ** 2 + 2 * a * b + b ** 2\n",
+    "print(\"(a+b)**2 =\", result1)\n",
+    "print(\"(a+b)*(a+b) =\", result2)\n",
+    "print(\"a**2 + 2ab + b**2 =\", result3)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Q6. WAP to calculate `a**m / a**n`\n",
+    "\n",
+    "```\n",
+    "a**m / a**n = a**(m-n)\n",
+    "(a**m)**n  = a**(m*n)\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "a**m / a**n = 8.0\n",
+      "a**(m-n) = 8\n",
+      "(a**m)**n = 1024\n",
+      "a**(m*n) = 1024\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 2\n",
+    "m = 5\n",
+    "n = 2\n",
+    "direct = (a ** m) / (a ** n)\n",
+    "using_law = a ** (m - n)\n",
+    "power_law = (a ** m) ** n\n",
+    "combined_power = a ** (m * n)\n",
+    "print(\"a**m / a**n =\", direct)\n",
+    "print(\"a**(m-n) =\", using_law)\n",
+    "print(\"(a**m)**n =\", power_law)\n",
+    "print(\"a**(m*n) =\", combined_power)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Q7. WAP which accepts number of days and converts into number of years and months"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "days = int(input(\"Enter no. of days: \") or \"800\")\n",
+    "years = days // 365\n",
+    "remaining_days = days % 365\n",
+    "months = remaining_days // 30\n",
+    "final_days = remaining_days % 30\n",
+    "print(\"{} days = {} years, {} months, {} days\".format(days, years, months, final_days))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "800 days = 2 years, 2 months, 10 days\n"
+     ]
+    }
+   ],
+   "source": [
+    "days = 800\n",
+    "years = days // 365\n",
+    "remaining_days = days % 365\n",
+    "months = remaining_days // 30\n",
+    "final_days = remaining_days % 30\n",
+    "print(\"{} days = {} years, {} months, {} days\".format(days, years, months, final_days))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Q8. WAP which computes the value of an arithmetic expression using multi-line assignment"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "a, b, c = 5 3 2\n",
+      "a*b + a - b*c = 14\n"
+     ]
+    }
+   ],
+   "source": [
+    "a, b, c = 5, 3, 2\n",
+    "result = a * b + a - b * c\n",
+    "print(\"a, b, c =\", a, b, c)\n",
+    "print(\"a*b + a - b*c =\", result)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Q9. WAP which computes all types of Relational and Assignment operators"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "Relational Operators:\n",
+      "a > b : False\n",
+      "a < b : True\n",
+      "a >= b : False\n",
+      "a <= b : True\n",
+      "a == b : False\n",
+      "a != b : True\n",
+      "\n",
+      "Assignment Operators:\n",
+      "c = a -> 10\n",
+      "c += a -> 20\n",
+      "c -= a -> 10\n",
+      "c *= a -> 100\n",
+      "c //= a -> 10\n",
+      "c **= 2 -> 100\n",
+      "c %%= a -> 0\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 10\n",
+    "b = 20\n",
+    "\n",
+    "# Relational operators\n",
+    "print(\"Relational Operators:\")\n",
+    "print(\"a > b :\", a > b)\n",
+    "print(\"a < b :\", a < b)\n",
+    "print(\"a >= b :\", a >= b)\n",
+    "print(\"a <= b :\", a <= b)\n",
+    "print(\"a == b :\", a == b)\n",
+    "print(\"a != b :\", a != b)\n",
+    "\n",
+    "# Assignment operators\n",
+    "print()\n",
+    "print(\"Assignment Operators:\")\n",
+    "c = a\n",
+    "print(\"c = a ->\", c)\n",
+    "c += a\n",
+    "print(\"c += a ->\", c)\n",
+    "c -= a\n",
+    "print(\"c -= a ->\", c)\n",
+    "c *= a\n",
+    "print(\"c *= a ->\", c)\n",
+    "c //= a\n",
+    "print(\"c //= a ->\", c)\n",
+    "c **= 2\n",
+    "print(\"c **= 2 ->\", c)\n",
+    "c %= a\n",
+    "print(\"c %%= a ->\", c)\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "name": "python",
+   "version": "3.11"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
